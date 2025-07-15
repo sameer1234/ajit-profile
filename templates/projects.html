@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects - Ajit Jaiswar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+    </div>
+    <div class="container">
+        <h2>My Projects</h2>
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="project-card">
+                <a href="/project/{{ project.id }}">
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}">
+                    <h3>{{ project.title }}</h3>
+                </a>
+                <p>{{ project.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

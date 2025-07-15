@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ project.title }} - Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="nav">
+        <a href="/">Home</a>
+        <a href="/projects">Projects</a>
+    </div>
+    <div class="container">
+        <h2>{{ project.title }}</h2>
+        <img class="detail-img" src="{{ url_for('static', filename='images/' + project.image) }}" alt="{{ project.title }}">
+        <p>{{ project.details }}</p>
+    </div>
+</body>
+</html>
